@@ -1,0 +1,48 @@
+create (olten:Place {name:'Olten', Country:'Switzerland'})
+create (daniken:Place {name:'Daeniken', Country:'Switzerland'})
+create (fairlight:Place {name:'Fairlight', Country:'Australia'})
+create (baku:Place {name:'Baku', Country:'Azarbaijan'})
+create (nsydney:Place {name: 'North Sydney', Country:'Australia'})
+create (swerd:Place {name: 'Schoenenwerd', Country:'Switzerland'})
+
+
+create (roland:Male {firstname:'Roland'})
+create (helen:Female {firstname:'Helen'})
+create (helen)  -[w2:is_woman_of]-> (r2:Relationship {type:'marriage'}) <-[m2:is_man_of]- (roland)
+
+create (xenia:Female {firstname:'Xenia'})
+create (felix:Male {firstname:'Felix'})
+create (xenia)  -[:is_child_of]-> (r2) 
+create (felix)  -[:is_child_of]-> (r2) 
+
+
+create (werner:Male {firstname:'Werner'})
+create (ursula:Female {firstname:'Ursula'})
+create (ursula) -[:is_woman_of]-> (r1:Relationship {type:'marriage'}) <-[:is_man_of]- (werner)
+create (roland) -[:is_child_of]-> (r1) 
+
+
+create (anatoli:Male {firstname:'Anatoli'})
+create (victoria:Female {firstname:'Victoria'})
+create (victoria)  -[:is_woman_of]-> (r3:Relationship {type:'marriage'}) <-[:is_man_of]- (anatoli)
+create (helen) -[c4:is_child_of]-> (r3) 
+
+
+create (robert:Male {firstname:'Robert'})
+create (margrit:Female {firstname:'Margrit'})
+create (margrit) -[w1:is_woman_of]-> (r4:Relationship {type:'marriage'}) <-[m1:is_man_of]- (robert)
+create (ursula)  -[:is_child_of]-> (r4) 
+
+
+create (helen) -[:born_in]-> (baku) 
+create (roland) -[:born_in]-> (olten)
+create (werner) -[:born_in] -> (daniken)
+create (werner) -[:living_in] -> (daniken)
+create (ursula) -[:living_in] -> (daniken)
+create (ursula) -[:born_in] -> (swerd)
+create (felix) -[:born_in]-> (nsydney) 
+create (xenia) -[:born_in]-> (nsydney) 
+create (felix) -[:living_in]-> (fairlight) 
+create (xenia) -[:living_in]-> (fairlight) 
+create (helen) -[:iving_in]-> (fairlight) 
+create (roland) -[:living_in]-> (fairlight) 
