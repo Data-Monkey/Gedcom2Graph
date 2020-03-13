@@ -22,7 +22,7 @@ match (n) detach delete n
 
 
 import parseGEDCOM as pg
-import loadGraph as lg
+import loadGRAPH as lg
 
 #GEDCOM_FILE = 'Beck Family Tree.ged'
 GEDCOM_FILE = 'royal92.ged'
@@ -37,5 +37,4 @@ print(persons)
 
 # Load to Graph Database
 lg.loadPersons(persons)
-
 lg.loadPersons(persons)
